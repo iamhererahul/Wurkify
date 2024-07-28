@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="home_slider.css" />
     <link
       rel="stylesheet"
@@ -20,16 +20,148 @@
     }
     #About .about_section {
       width: 100%;
-      height: 50vh;
-      background-color: white;
+      height: 90vh;
+      background-color: black;
+      display: flex;
+      flex-direction: row;
     }
-    #About .about_section img {
+
+    #About .about_section h1 {
+      color: white;
       position: absolute;
-      top: 100%;
-      left: 0%;
-      bottom: 0%;
-      height: 50%;
+      left: 40%;
+      top: 95%;
+      font-weight: 600;
+      font-size: 40px;
+      z-index: 6;
+      transition: color 0.3s ease-in-out;
     }
+
+    #About .about_section1 {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #About .about_section1 .back_glass {
+      width: 75%;
+      height: 80%;
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+      position: relative;
+    }
+
+    .hover14 figure {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hover14 figure::before {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      transform: skewX(-25deg);
+      transition: left 0.75s;
+    }
+
+    .hover14 figure:hover::before {
+      left: 125%;
+    }
+
+    #About .about_section1 .back_glass .img1,
+    #About .about_section1 .back_glass .img2 {
+      position: absolute;
+      transition: transform 1s ease-in-out;
+    }
+
+    #About .about_section1 .back_glass .img1 {
+      top: 45%;
+      left: 50%;
+      width: 65%;
+      height: 60%;
+      z-index: 5;
+    }
+
+    #About .about_section1 .back_glass .img2 {
+      top: -10%;
+      left: -7%;
+      width: 65%;
+      height: 60%;
+      z-index: 5;
+    }
+
+    #About .about_section1 .back_glass .img1 img,
+    #About .about_section1 .back_glass .img2 img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    #About .about_section1 .back_glass .img1:hover,
+    #About .about_section1 .back_glass .img2:hover {
+      transform: scale(1.05);
+    }
+
+    #About .about_section2 {
+      width: 50%;
+      color: white;
+    }
+
+    #About .about_section2 .text {
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    #About .about_section2 .text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #About .about_section2 .text p,
+    #About .about_section2 .text h2 {
+      margin: 20px 0;
+    }
+
+    #About .about_section2 .text p {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    #About .about_section2 .text h2 {
+      font-family: "Roboto Slab", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f0f0f0;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+
+    #About .about_section2 .text h3 {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #fff;
+    }
+
     #Category .category_section {
       width: 100%;
       height: 100vh;
@@ -64,7 +196,7 @@
             </div>
             <ul class="menu-items">
               <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li><a href="#About">About</a></li>
               <li><a href="#">Category</a></li>
               <li><a href="#">Menu</a></li>
               <li><a href="#">Testimonial</a></li>
@@ -181,12 +313,47 @@
       </section>
       <section id="About">
         <div class="about_section">
+          <h1>About Wurkify</h1>
           <div class="about_section1">
-            <img src="images/self.jpg" alt="employee" />
+            <div class="back_glass">
+              <div class="hover14">
+                <figure class="img1">
+                  <img src="images/JOb-search.jpg" alt="Job Search" />
+                </figure>
+              </div>
+              <div class="hover14">
+                <figure class="img2">
+                  <img src="images/money.jpg" alt="Money" />
+                </figure>
+              </div>
+            </div>
           </div>
-          <div class="about_section2"></div>
+          <div class="about_section2">
+            <div class="text">
+              <p class="about-description">
+                Wurkify is a cutting-edge platform revolutionizing the part-time
+                job market in India. We connect job seekers with flexible,
+                reliable employment opportunities and job providers with
+                skilled, adaptable staff.
+              </p>
+              <h2>Vision</h2>
+              <p>
+                Wurkify envisions a future where finding part-time work or staff
+                is as simple and straightforward as possible. We aim to be the
+                leading platform for part-time job opportunities in India, known
+                for our reliability, ease of use, and commitment to our users.
+              </p>
+              <h2>Mission</h2>
+              <p>
+                Our mission is to simplify the process of finding and filling
+                part-time roles, ensuring that everyone can access work that
+                suits their schedule and lifestyle.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
       <section id="Category">
         <div class="category_section"></div>
       </section>
@@ -204,5 +371,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script> -->
     <!-- <script src="animation.js"></script> -->
     <script src="app.js"></script>
+    <script src="text.js"></script>
   </body>
 </html>
